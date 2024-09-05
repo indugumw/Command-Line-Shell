@@ -1,0 +1,7 @@
+--- outputs/D_dhcp_request.txt	2023-12-07 16:23:42.459342312 -0500
++++ expected/D_dhcp_request.txt	2023-11-27 12:08:13.941865567 -0500
+@@ -20,4 +20,3 @@
+ Message Type = DHCP Request
+ Request = 10.2.1.204
+ Server Identifier = 10.2.1.1
+-Server Identifier = 72.111.112.115

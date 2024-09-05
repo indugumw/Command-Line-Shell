@@ -1,0 +1,13 @@
+D_bootp_eth                    pass
+D_bootp_802                    pass
+D_bootp_arc                    pass
+D_bootp_frame                  pass
+D_bootp_fibre                  pass
+D_dhcp_disc                    FAIL (see outputs/D_dhcp_disc.diff for details)
+D_dhcp_offer                   FAIL (see outputs/D_dhcp_offer.diff for details)
+D_dhcp_request                 FAIL (see outputs/D_dhcp_request.diff for details)
+D_dhcp_decline                 FAIL (see outputs/D_dhcp_decline.diff for details)
+D_dhcp_ack                     FAIL (see outputs/D_dhcp_ack.diff for details)
+D_dhcp_nak                     FAIL (see outputs/D_dhcp_nak.diff for details)
+D_dhcp_release                 FAIL (see outputs/D_dhcp_release.diff for details)
+No memory leak found.

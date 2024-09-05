@@ -1,0 +1,7 @@
+--- outputs/D_dhcp_release.txt	2023-12-07 16:23:42.479342490 -0500
++++ expected/D_dhcp_release.txt	2023-11-27 12:08:13.941865567 -0500
+@@ -19,4 +19,3 @@
+ Magic Cookie = [OK]
+ Message Type = DHCP Release
+ Server Identifier = 10.2.1.1
+-Server Identifier = 72.111.112.115

@@ -1,0 +1,18 @@
+--- outputs/D_dhcp_ack.txt	2023-12-07 16:23:42.467342383 -0500
++++ expected/D_dhcp_ack.txt	2023-11-27 12:08:13.933865500 -0500
+@@ -5,7 +5,7 @@
+ Hardware Type (htype) = 1 [Ethernet (10Mb)]
+ Hardware Address Length (hlen) = 6
+ Hops (hops) = 0
+-Transaction ID (xid) = 656223005 (0x21274a1d)
++Transaction ID (xid) = 556223005 (0x21274a1d)
+ Seconds (secs) = 0 Days, 0:00:00
+ Flags (flags) = 0
+ Client IP Address (ciaddr) = 0.0.0.0
+@@ -20,6 +20,3 @@
+ Message Type = DHCP ACK
+ IP Address Lease Time = 30 Days, 0:00:00
+ Server Identifier = 10.2.1.1
+-Server Identifier = 72.111.112.115
+-Message Type = Unknown
+-Server Identifier = 54.50.50.51

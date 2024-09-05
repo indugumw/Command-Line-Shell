@@ -1,0 +1,18 @@
+--- outputs/D_dhcp_nak.txt	2023-12-07 16:23:42.475342454 -0500
++++ expected/D_dhcp_nak.txt	2023-11-27 12:08:13.937865534 -0500
+@@ -5,7 +5,7 @@
+ Hardware Type (htype) = 1 [Ethernet (10Mb)]
+ Hardware Address Length (hlen) = 6
+ Hops (hops) = 0
+-Transaction ID (xid) = 656223005 (0x21274a1d)
++Transaction ID (xid) = 556223005 (0x21274a1d)
+ Seconds (secs) = 0 Days, 0:00:00
+ Flags (flags) = 0
+ Client IP Address (ciaddr) = 0.0.0.0
+@@ -19,6 +19,3 @@
+ Magic Cookie = [OK]
+ Message Type = DHCP NAK
+ Server Identifier = 10.2.1.1
+-Server Identifier = 72.111.112.115
+-Message Type = Unknown
+-Server Identifier = 54.50.50.51

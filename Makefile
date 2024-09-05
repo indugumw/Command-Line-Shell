@@ -18,43 +18,53 @@
 
 # application-specific settings and run target
 
-EXE=dukesh
-MODS=main.o process.o shell.o builtins.o hash.o
-OBJS=
-LIBS=
+EXE=interp client server
+MODS=dhcp.o format.o
+OBJS=port_utils.o
+LIBS=-lm
 
 default: build $(EXE)
 
 build:
 	mkdir build
 
-test: build $(EXE)
-	make -C tests test
+int: build interp
+	make -C tests inttest
 
-style: $(EXE)
-	make -C tests style
+cli: build client
+	make -C tests itest-cl
+
+pro: build client
+	make -C tests itest-proto
+
+srv: build server
+	make -C tests itest-serv
 
 # compiler/linker settings
 
 CC=gcc
-CFLAGS=-g -O0 -Wall -std=c99 -pedantic -D_POSIX_C_SOURCE=200809L
-LDFLAGS=-g -O0
+CFLAGS=-g -O0 -Wall --std=gnu99 -pedantic
+LDFLAGS=-g -O0 -pthread
 
 
 # build targets
 
 BUILD=$(addprefix build/, $(MODS))
 
-$(EXE): build/main.o $(BUILD) $(OBJS)
-	$(CC) $(LDFLAGS) -o $(EXE) $^ $(LIBS)
-	make -C utils
-
 build/%.o: src/%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
+interp: $(BUILD) build/interp.o $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+client: $(BUILD) build/client.o $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+server: $(BUILD) build/server.o $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+
 clean:
-	rm -rf $(EXE) build
-	make -C utils clean
+	rm -rf $(EXE) $(MODS) build
 	make -C tests clean
 
 .PHONY: default clean
